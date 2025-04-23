@@ -1,0 +1,36 @@
+//TODO import dependencies part
+import React, { memo, Fragment, useState, useEffect } from "react";
+
+//TODO define component props type part
+interface <%= name %>Props {
+  children?: React.ReactNode;
+}
+
+//TODO define component
+const <%= name %> = (props) => {
+  //TODO define component state part
+  const [message, setMessage]: ReturnType<useState<string>> = useState<string>("hello world.I am Happy");
+
+  //TODO define component effect part
+  useEffect(() => {
+    if (props.message) {
+      setMessage(props.message)
+    }
+  }, [message]);  
+
+  //TODO define component event part
+  const changeMessage = () => {
+    setMessage(message.match(/Happy/) ? message.replace(/Happy/, "sad") : "hello world.I am Happy");
+  };
+  //TODO define component render part
+  return (
+    <Fragment>
+      <div className="<%= name %>">
+        <div className="<%= name %>-react-ts">{ message }</div>
+        <div className="<%= name %>btn">
+          <button onClick="() => changeMessage">修改文本</button>
+        </div>
+      </div>
+    </Fragment>   
+  )
+}

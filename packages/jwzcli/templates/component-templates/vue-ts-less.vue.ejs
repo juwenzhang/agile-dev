@@ -1,0 +1,42 @@
+<template>
+  <div class="<%= name %>">
+    <div class="<%= name %>-vue-ts">
+      {{ message }}
+    </div>
+    <div class="<%= name %>-btn">
+      <button @click="changeMessage">修改文本</button>
+    </div>
+  </div>
+</template>  
+
+<script setup lang="ts" name="<%= name %>">
+//TODO import dependencies part  
+import { ref } from 'vue'
+
+//TODO define component state part
+const message: ReturnType<typeof ref<string>> = ref<string>("hello world.I am Happy")
+
+//TODO define component event part  
+const changeMessage = () => {
+  message.value = message.value?.match(/Happy/) ? message.value.replace(/Happy/, "sad") :  "hello world.I am Happy"
+}
+</script>
+
+<style lang="less" scoped>
+.<%= name %> {
+  .<%= name %>-vue-ts {
+    color: red;
+    font-size: 20px;
+  }
+  .<%= name %>-btn {
+    button {
+      width: 100px;
+      height: 40px;
+      background-color: #ccc;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    } 
+  } 
+}
+</style>

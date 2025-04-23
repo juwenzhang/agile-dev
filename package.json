@@ -1,0 +1,30 @@
+{
+  "name": "agile-dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish:cli": "pnpm -F jwz-m-cli run deploy"
+  },
+  "keywords": [
+    "react",
+    "next",
+    "tailwind",
+    "typescript",
+    "eslint",
+    "prettier",
+    "front-end",
+    "agile-dev"
+  ],
+  "author": "",
+  "license": "MIT",
+  "packageManager": "pnpm@10.6.5",
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0"
+  },
+  "dependencies": {
+    "fs-extra": "^11.3.0"
+  }
+}

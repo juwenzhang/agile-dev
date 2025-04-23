@@ -1,0 +1,42 @@
+{
+  "name": "jwz-m-cli",
+  "version": "1.0.5",
+  "description": "juwenzhang self cli.All people can use it or commit pull request.",
+  "main": "index.js",
+  "module": "ES6",
+  "bin": {
+    "jwzcli": "./lib/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:tsc": "rd /s /q jwz-m-cli 2>nul && mkdir jwz-m-cli && tsc && copyfiles package.json docs/**/* types/**/* README.md LICENSE templates/**/* jwz-m-cli",
+    "start": "node dist/lib/index.js",
+    "login": "npm login",
+    "publish": "cd jwz-m-cli && npm publish",
+    "deploy": "pnpm run build:tsc && pnpm run login && pnpm run publish"
+  },
+  "keywords": [
+    "jwzcli",
+    "cli",
+    "self-cli",
+    "node",
+    "javascript"
+  ],
+  "author": "juwenzhang",
+  "license": "MIT",
+  "packageManager": "pnpm@10.6.5",
+  "dependencies": {
+    "commander": "^13.1.0",
+    "download-git-repo": "^3.0.2",
+    "ejs": "^3.1.10",
+    "remote-dev-temp": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/commander": "^2.12.5",
+    "@types/ejs": "^3.1.5",
+    "@types/node": "^22.14.1",
+    "copyfiles": "^2.4.1",
+    "tslib": "^2.8.1",
+    "typescript": "^5.8.3"
+  }
+}
